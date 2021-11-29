@@ -1,0 +1,110 @@
+<mujoco model='sawyer-DHand-v2.0'>
+<!-- ======================================================
+    Model       :: Sawyer-DHand (MuJoCoV2.0)
+    Author      :: Vikash Kumar
+        Contacts    : vikashplus@gmail.com
+        Last edits  : 3Apr'20,
+    Copyright 2018 Vikash Kumar
+        Licensed under Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+====================================================== -->
+    <compiler meshdir="../../../sawyer_sim/" texturedir="../../../dsuite-scenes/scenes/"/>
+
+    <include file="../../../sawyer_sim/assets/basic_scene.xml"/>
+
+    <!-- Sawyer -->
+    <include file="../../../sawyer_sim/assets/sawyer_dependencies.xml"/>
+    <include file="../../../sawyer_sim/assets/sawyer_mocap_ee_act.xml"/>
+
+    <!-- D'Hand -->
+    <include file="../../../robel-scenes_dev/dhand/assets/dhand_dependencies.xml"/>
+
+    <size njmax='1000' nconmax='1000'/>
+
+    <include file='./dependencies.xml' />
+    <asset>
+      <material name="screw-material" shininess='0.6' specular='0.35'/>
+      <mesh file="../r3l_envs/inhand_env/assets/lightbulb.stl" scale="2.5 2.5 2.5"/>
+    </asset>
+    <worldbody>
+        <!-- ROBOT -->
+        <include file="../../base_env/assets/sawyer_dHand_chain.xml"/> <!--dHand is imported in here-->
+
+        <!-- TABLE -->
+        <body name="table" pos="0.7 0.15 0.72">
+          <!-- Arena platform -->
+          <geom type="box" size="0.55 0.55 0.5" pos="0 0 -0.5" rgba=".75 .75 .75 1"/>
+
+          <!-- Spherical bound of object movement, due to the string attached (see below) -->
+          <site name="workspace" type="sphere" size="0.45" pos="0 0 0.165" rgba="1 1 1 0.05"/>
+
+          <!-- Axes markers -->
+          <!-- <site name="x_ax" type="cylinder" size="0.01 0.1" pos="0.1 0 0" rgba="1 0 0 .25" euler="0 1.57 0"/>
+          <site name="y_ax" type="cylinder" size="0.01 0.1" pos="0 0.1 0" rgba="0 1 0 .25" euler="1.57 0 0"/> -->
+        </body>
+
+        <body name="phase_indicator" pos="0.72 0.6 0.715" euler="0 0 0">
+          <geom name="pi0" type="box" pos="0.2 0 0" size="0.05 0.05 0.01" contype="0" conaffinity="0" group='1' rgba="0 0 1 0"/>
+          <geom name="pi1" type="box" pos="0.1 0 0" size="0.05 0.05 0.01" contype="0" conaffinity="0" group='1' rgba="0 0 1 0"/>
+          <geom name="pi2" type="box" pos="0 0 0" size="0.05 0.05 0.01" contype="0" conaffinity="0" group='1' rgba="0 0 1 0"/>
+          <geom name="pi3" type="box" pos="-0.1 0 0" size="0.05 0.05 0.01" contype="0" conaffinity="0" group='1' rgba="0 0 1 0"/>
+          <geom name="pi4" type="box" pos="-0.2 0 0" size="0.05 0.05 0.01" contype="0" conaffinity="0" group='1' rgba="0 0 1 0"/>
+        </body>
+
+        <body name="xy_completion_indicator" pos="0.72 0.15 0.715" euler="0 0 0">
+          <geom name="xy_ind" type="cylinder" size="0.1 0.01" contype="0" conaffinity="0"  group='1' rgba="0.9 0.9 0.9 0.25"/>
+        </body>
+
+        <!-- Dodecahedron Target -->
+        <body name="target" pos="0.92 0.15 1.22" euler="0 0 0">
+          <include file="./dodecahedron_visual.xml" />
+        </body>
+
+        <!-- Dodecahedron -->
+        <body name="object" pos="0.72 0.15 0.8" euler="0 0 0">
+          <geom type="mesh" mesh="lightbulb" rgba="1 1 1 1.0" pos="0.0 0 0." euler="0. -1.57 0." contype="0" conaffinity="0"/>
+          <include file="./dodecahedron.xml" />
+          <!-- <light directional="true" diffuse="1 1 1" dir="-1 0 0" pos="0 0 0" active="true" /> -->
+          <freejoint name="r1"/>
+        </body>
+
+        <body name="ceiling" pos="0.72 0.15 1.2">
+          <body name="top" pos="0 0 0">
+            <!-- Bottom -->
+             <geom class='station_phy_plastic' type="box" pos="0.125 0 0." size="0.05 0.175 0.001" rgba='0 0 0 1.0' group='1' />
+             <geom class='station_phy_plastic' type="box" pos="-0.125 0 0." size="0.05 0.175 0.001" rgba='0 0 0 1.0' group='1' />
+             <geom class='station_phy_plastic' type="box" pos="0 0.125 0." size="0.175 0.05 0.001" rgba='0 0 0 1.0' group='1' />
+             <geom class='station_phy_plastic' type="box" pos="0 -0.125 0." size="0.175 0.05 0.001" rgba='0 0 0 1.0' group='1' />
+              <geom class='station_phy_plastic' type="box" pos="0 0 0.055" size="0.1 0.1 0.001" rgba='0 0 0 1.0' group='1' />
+
+            <!-- Top -->
+              <geom class='station_phy_plastic' type="box" pos="0.125 0 0.055" size="0.05 0.175 0.001" rgba='0 0 0 1.0' group='1' />
+             <geom class='station_phy_plastic' type="box" pos="-0.125 0 0.055" size="0.05 0.175 0.001" rgba='0 0 0 1.0' group='1' />
+             <geom class='station_phy_plastic' type="box" pos="0 0.125 0.055" size="0.175 0.05 0.001" rgba='0 0 0 1.0' group='1' />
+             <geom class='station_phy_plastic' type="box" pos="0 -0.125 0.055" size="0.175 0.05 0.001" rgba='0 0 0 1.0' group='1' />
+
+              <!-- Sides -->
+              <geom class='station_phy_plastic' type="box" pos="0.175 0 0.0275" size="0.001 0.175 0.05" rgba='0 0 0 1.0' group='1' />
+             <geom class='station_phy_plastic' type="box" pos="-0.175 0 0.0275" size="0.001 0.175 0.05" rgba='0 0 0 1.0' group='1' />
+             <geom class='station_phy_plastic' type="box" pos="0 0.175 0.0275" size="0.175 0.001 0.05" rgba='0 0 0 1.0' group='1' />
+             <geom class='station_phy_plastic' type="box" pos="0 -0.175 0.0275" size="0.175 0.001 0.05" rgba='0 0 0 1.0' group='1' />
+
+             <!-- Shaft support -->
+              <geom class='station_phy_plastic' type="box" pos="0.225 0 0.0275" size="0.15 0.0275 0.0275" rgba='0.5 0.5 0.5 1.0' group='1' />
+              <geom class='station_phy_plastic' type="box" pos="0.375 0 -0.1925" size="0.0275 0.0275 0.25" rgba='0.5 0.5 0.5 1.0' group='1' />
+              <geom class='station_phy_plastic' type="box" pos="0.375 0 -0.4425" size="0.15 0.15 0.03" rgba='0 0 0 1.0' group='1' />
+
+          </body>
+            <include file="./hoop.xml" />
+        </body>
+
+   </worldbody>
+
+    <tendon>
+      <spatial limited="true" range="0 0.45" width="0.005">
+        <site site="workspace"/>
+        <site site="dodecahedron_center"/>
+      </spatial>
+    </tendon>
+
+
+</mujoco>

@@ -1,0 +1,153 @@
+{
+    "environment_git_sha": "a97ded71834bf9df04db3b517766ea71c40da634 master",
+    "environment_params": {
+        "training": {
+            "domain": "SawyerDhandInHandValve3",
+            "task": "PickupFixed-v0",
+            "universe": "gym",
+            "kwargs": {
+                "init_xyz_range_params": {
+                    "type": "DiscreteRange",
+                    "values": [
+                        [
+                            0.72,
+                            0.15,
+                            0.75
+                        ]
+                    ]
+                },
+                "init_euler_range_params": {
+                    "type": "DiscreteRange",
+                    "values": [
+                        [
+                            0,
+                            0,
+                            0
+                        ]
+                    ]
+                },
+                "reset_every_n_episodes": 1,
+                "readjust_to_object_in_reset": true,
+                "readjust_hand_xyz": true,
+                "readjust_hand_euler": false
+            }
+        },
+        "evaluation": {
+            "domain": "SawyerDhandInHandValve3",
+            "task": "PickupFixedEval-v0",
+            "universe": "gym",
+            "kwargs": {
+                "init_xyz_range_params": {
+                    "type": "DiscreteRange",
+                    "values": [
+                        [
+                            0.72,
+                            0.15,
+                            0.75
+                        ]
+                    ]
+                },
+                "init_euler_range_params": {
+                    "type": "DiscreteRange",
+                    "values": [
+                        [
+                            0,
+                            0,
+                            0
+                        ]
+                    ]
+                },
+                "reset_every_n_episodes": 1,
+                "readjust_to_object_in_reset": true,
+                "readjust_hand_xyz": true,
+                "readjust_hand_euler": false
+            }
+        }
+    },
+    "mocap_range": [
+        [
+            0.26999999999999996,
+            0.8699999999999999
+        ],
+        [
+            -0.11499999999999999,
+            0.485
+        ],
+        [
+            0.825,
+            1.175
+        ],
+        [
+            -3.141592653589793,
+            -3.141592653589793
+        ],
+        [
+            0.0,
+            0.0
+        ],
+        [
+            -0.5235987755982988,
+            0.5235987755982988
+        ]
+    ],
+    "mocap_pos_mean": [
+        0.57,
+        0.185,
+        1.0
+    ],
+    "mocap_quat_mean": [
+        6.123233995736766e-17,
+        -1.0,
+        0.0,
+        0.0
+    ],
+    "mocap_velocity_lim": [
+        0.01,
+        0.01,
+        0.01,
+        0.0,
+        0.0,
+        0.02
+    ],
+    "observation_keys": [
+        "dhand_qpos",
+        "sawyer_arm_qpos",
+        "dhand_qvel",
+        "sawyer_arm_qvel",
+        "mocap_pos",
+        "mocap_euler",
+        "object_xyz",
+        "object_top_angle_cos",
+        "object_top_angle_sin",
+        "target_xyz",
+        "target_top_angle_cos",
+        "target_top_angle_sin",
+        "object_to_hand_xyz",
+        "object_site1_to_target_site1_xyz_err",
+        "object_site2_to_target_site2_xyz_err",
+        "object_site3_to_target_site3_xyz_err"
+    ],
+    "obj_offset": [
+        -0.15,
+        0.0,
+        0.175
+    ],
+    "hand_velocity_lim": [
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8
+    ]
+}

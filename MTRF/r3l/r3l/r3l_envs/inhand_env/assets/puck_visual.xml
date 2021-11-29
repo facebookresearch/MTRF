@@ -1,0 +1,54 @@
+<mujocoinclude name='puck_visual'>
+  <body name='target' pos='0 0 0'>
+    <body euler='0 0 0'>
+      <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 0.1' group='1' contype='0' conaffinity='0' density='100'/>
+    </body>
+    <body euler='0 0 1.57'>
+      <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 0.1' group='1' contype='0' conaffinity='0' density='100'/>
+    </body>
+    <body euler='0 0 3.14'>
+      <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 0.1' group='1' contype='0' conaffinity='0' density='100'/>
+    </body>
+    <body euler='0 0 4.71'>
+      <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 0.1' group='1' contype='0' conaffinity='0' density='100'/>
+    </body>
+    <body euler='0 0 0.785'>
+      <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 0.1' group='1' contype='0' conaffinity='0' density='100'/>
+    </body>
+    <body euler='0 0 2.36'>
+      <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 0.1' group='1' contype='0' conaffinity='0' density='100'/>
+    </body>
+    <body euler='0 0 3.93'>
+      <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 0.1' group='1' contype='0' conaffinity='0' density='100'/>
+    </body>
+    <body euler='0 0 5.50'>
+      <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 0.1' group='1' contype='0' conaffinity='0' density='100'/>
+    </body>
+    <body euler='0 0 0.392'>
+      <body euler='0 0 0'>
+        <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 0.1' group='1' contype='0' conaffinity='0' density='100'/>
+      </body>
+      <body euler='0 0 1.57'>
+        <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 0.1' group='1' contype='0' conaffinity='0' density='100'/>
+      </body>
+      <body euler='0 0 3.14'>
+        <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 0.1' group='1' contype='0' conaffinity='0' density='100'/>
+      </body>
+      <body euler='0 0 4.71'>
+        <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 0.1' group='1' contype='0' conaffinity='0' density='100'/>
+      </body>
+      <body euler='0 0 0.785'>
+        <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 0.1' group='1' contype='0' conaffinity='0' density='100'/>
+      </body>
+      <body euler='0 0 2.36'>
+        <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 0.1' group='1' contype='0' conaffinity='0' density='100'/>
+      </body>
+      <body euler='0 0 3.93'>
+        <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 0.1' group='1' contype='0' conaffinity='0' density='100'/>
+      </body>
+      <body euler='0 0 5.50'>
+        <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 0.1' group='1' contype='0' conaffinity='0' density='100'/>
+      </body>
+    </body>
+  </body>
+</mujocoinclude>

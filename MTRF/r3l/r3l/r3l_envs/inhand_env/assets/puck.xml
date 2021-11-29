@@ -1,0 +1,60 @@
+<mujocoinclude name='puck' >
+  <body name='object' pos='0 0 0.0101'>
+    <body euler='0 0 0'>
+      <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 1' group='1' />
+    </body>
+    <body euler='0 0 1.57'>
+      <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 1' group='1' />
+    </body>
+    <body euler='0 0 3.14'>
+      <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 1' group='1' />
+    </body>
+    <body euler='0 0 4.71'>
+      <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 1' group='1' />
+    </body>
+    <body euler='0 0 0.785'>
+      <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 1' group='1' />
+    </body>
+    <body euler='0 0 2.36'>
+      <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 1' group='1' />
+    </body>
+    <body euler='0 0 3.93'>
+      <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 1' group='1' />
+    </body>
+    <body euler='0 0 5.50'>
+      <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 1' group='1' />
+    </body>
+    <body euler='0 0 0.392'>
+      <body euler='0 0 0'>
+        <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 1' group='1' />
+      </body>
+      <body euler='0 0 1.57'>
+        <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 1' group='1' />
+      </body>
+      <body euler='0 0 3.14'>
+        <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 1' group='1' />
+      </body>
+      <body euler='0 0 4.71'>
+        <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 1' group='1' />
+      </body>
+      <body euler='0 0 0.785'>
+        <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 1' group='1' />
+      </body>
+      <body euler='0 0 2.36'>
+        <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 1' group='1' />
+      </body>
+      <body euler='0 0 3.93'>
+        <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 1' group='1' />
+      </body>
+      <body euler='0 0 5.50'>
+        <geom class='station_phy_plastic' type="box" pos="0.055 0 0.02" size="0.0075 0.0125 0.015" rgba='0.8 0.1 0.1 1' group='1' />
+      </body>
+    </body>
+    <joint name="valve_OBJSx"  pos="0 0 0" type="slide" axis="1 0 0" limited='false'/>
+    <joint name="valve_OBJSy"  pos="0 0 0" type="slide" axis="0 1 0" limited='false' />
+    <joint name="valve_OBJSz"  pos="0 0 0" type="slide" axis="0 0 1" limited='false' />
+    <joint name="valve_OBJRx"  pos="0 0 0" type="hinge" axis="1 0 0" limited='false' />
+    <joint name="valve_OBJRy"  pos="0 0 0" type="hinge" axis="0 1 0" limited='false' />
+    <joint name="valve_OBJRz"  pos="0 0 0" type="hinge" axis="0 0 1" limited='false' />
+  </body>
+</mujocoinclude>

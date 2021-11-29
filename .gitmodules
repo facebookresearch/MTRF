@@ -1,0 +1,7 @@
+[submodule "MTRF/r3l/r3l/sawyer_sim"]
+	path = MTRF/r3l/r3l/sawyer_sim
+	url = https://github.com/vikashplus/sawyer_sim
+[submodule "MTRF/r3l/r3l/robel-scenes_dev"]
+	path = MTRF/r3l/r3l/robel-scenes_dev
+	url = https://github.com/vikashplus/robel-scenes_dev.git
+	branch = experimental-hand

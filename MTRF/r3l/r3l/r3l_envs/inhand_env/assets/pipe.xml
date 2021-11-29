@@ -1,0 +1,80 @@
+<mujocoinclude name='pipe'>
+  <body name="pipe" pos="0 0 0" euler="1.57 0 0">
+    <!-- visuals -->
+    <!-- <geom type="cylinder" size="0.070 0.2" pos="0 0 0.000" group="1" contype="0" conaffinity="0" rgba=".21 .3 .2 1"/>
+    <geom type="cylinder" size="0.072 0.02" pos="0 0 0.185" group="1" contype="0" conaffinity="0" rgba=".4 .2 .4 1"/>
+    <geom type="cylinder" size="0.042 0.02" pos="0 0 0.187" group="1" contype="0" conaffinity="0" rgba='0.58 0.65 0.65 1'/> -->
+
+
+    <geom type="box" pos="0.05 0 0.00" size="0.01 0.025 0.2" euler="0 0 0" rgba=".21 .3 .2 1" group='1' contype="0" conaffinity="0" />
+    <geom type="box" pos="-.05 0 0.00" size="0.01 0.025 0.2" euler="0 0 0" rgba=".56 .76 .47 1" group='1' contype="0" conaffinity="0"/>
+    <geom type="box" pos="0 0.05 0.00" size="0.01 0.025 0.2" euler="0 0 1.57" rgba=".21 .3 .2 1" group='1' contype="0" conaffinity="0" />
+    <geom type="box" pos="0 -.05 0.00" size="0.01 0.025 0.2" euler="0 0 1.57" rgba=".21 .3 .2 1" group='1' contype="0" conaffinity="0" />
+    <geom type="box" pos="0.0354 0.0354 0.00" size="0.01 0.025 0.2" euler="0 0 0.785" rgba=".21 .3 .2 1" group='1' contype="0" conaffinity="0" />
+    <geom type="box" pos="-.0354 -.0354 0.00" size="0.01 0.025 0.2" euler="0 0 0.785" rgba=".21 .3 .2 1" group='1' contype="0" conaffinity="0" />
+    <geom type="box" pos="-.0354 .0354 0.00" size="0.01 0.025 0.2" euler="0 0 -.785" rgba=".21 .3 .2 1" group='1' contype="0" conaffinity="0" />
+    <geom type="box" pos="0.0354 -.0354 0.00" size="0.01 0.025 0.2" euler="0 0 -.785" rgba=".21 .3 .2 1" group='1' contype="0" conaffinity="0"  />
+
+    <geom type="box" pos="0.07 0 0.185" size="0.01 0.032 0.025" euler="0 0 0" rgba=".4 .2 .4 1" group='1' contype="0" conaffinity="0"  />
+    <geom type="box" pos="-.07 0 0.185" size="0.01 0.032 0.025" euler="0 0 0" rgba=".4 .2 .4 1" group='1' contype="0" conaffinity="0"  />
+    <geom type="box" pos="0 0.07 0.185" size="0.01 0.032 0.025" euler="0 0 1.57" rgba=".4 .2 .4 1" group='1' contype="0" conaffinity="0"  />
+    <geom type="box" pos="0 -.07 0.185" size="0.01 0.032 0.025" euler="0 0 1.57" rgba=".4 .2 .4 1" group='1' contype="0" conaffinity="0"  />
+    <geom type="box" pos="0.0495 0.0495 0.185" size="0.01 0.032 0.025" euler="0 0 0.785" rgba=".4 .2 .4 1" group='1' contype="0" conaffinity="0"  />
+    <geom type="box" pos="-.0495 -.0495 0.185" size="0.01 0.032 0.025" euler="0 0 0.785" rgba=".4 .2 .4 1" group='1' contype="0" conaffinity="0"  />
+    <geom type="box" pos="-.0495 .0495 0.185" size="0.01 0.032 0.025" euler="0 0 -.785" rgba=".4 .2 .4 1" group='1' contype="0" conaffinity="0"  />
+    <geom type="box" pos="0.0495 -.0495 0.185" size="0.01 0.032 0.025" euler="0 0 -.785" rgba=".4 .2 .4 1" group='1' contype="0" conaffinity="0"  />
+
+    <geom type="box" pos="0.07 0 -0.185" size="0.01 0.032 0.025" euler="0 0 0" rgba='0.14 0.36 0.86 1' group='1' contype="0" conaffinity="0"  />
+    <geom type="box" pos="-.07 0 -0.185" size="0.01 0.032 0.025" euler="0 0 0" rgba='0.14 0.36 0.86 1' group='1' contype="0" conaffinity="0"  />
+    <geom type="box" pos="0 0.07 -0.185" size="0.01 0.032 0.025" euler="0 0 1.57" rgba='0.14 0.36 0.86 1' group='1' contype="0" conaffinity="0"  />
+    <geom type="box" pos="0 -.07 -0.185" size="0.01 0.032 0.025" euler="0 0 1.57" rgba='0.14 0.36 0.86 1' group='1' contype="0" conaffinity="0"  />
+    <geom type="box" pos="0.0495 0.0495 -0.185" size="0.01 0.032 0.025" euler="0 0 0.785" rgba='0.14 0.36 0.86 1' group='1' contype="0" conaffinity="0"  />
+    <geom type="box" pos="-.0495 -.0495 -0.185" size="0.01 0.032 0.025" euler="0 0 0.785" rgba='0.14 0.36 0.86 1' group='1' contype="0" conaffinity="0"  />
+    <geom type="box" pos="-.0495 .0495 -0.185" size="0.01 0.032 0.025" euler="0 0 -.785" rgba="0.14 0.36 0.86 1" group='1' contype="0" conaffinity="0"  />
+    <geom type="box" pos="0.0495 -.0495 -0.185" size="0.01 0.032 0.025" euler="0 0 -.785" rgba="0.14 0.36 0.86 1" group='1' contype="0" conaffinity="0"  />
+
+    <!-- collisions -->
+    <geom type="box" pos="0.05 0 0.00" size="0.01 0.025 0.2" euler="0 0 0" rgba=".21 .3 .2 1" group='4' contype="1" conaffinity="0" mass="0.050" />
+    <geom type="box" pos="-.05 0 0.00" size="0.01 0.025 0.2" euler="0 0 0" rgba=".21 .3 .2 1" group='4' contype="1" conaffinity="0" mass="0.050"  />
+    <geom type="box" pos="0 0.05 0.00" size="0.01 0.025 0.2" euler="0 0 1.57" rgba=".21 .3 .2 1" group='4' contype="1" conaffinity="0" mass="0.050"  />
+    <geom type="box" pos="0 -.05 0.00" size="0.01 0.025 0.2" euler="0 0 1.57" rgba=".21 .3 .2 1" group='4' contype="1" conaffinity="0" mass="0.050"  />
+    <geom type="box" pos="0.0354 0.0354 0.00" size="0.01 0.025 0.2" euler="0 0 0.785" rgba=".21 .3 .2 1" group='4' contype="1" conaffinity="0" mass="0.050" />
+    <geom type="box" pos="-.0354 -.0354 0.00" size="0.01 0.025 0.2" euler="0 0 0.785" rgba=".21 .3 .2 1" group='4' contype="1" conaffinity="0" mass="0.050" />
+    <geom type="box" pos="-.0354 .0354 0.00" size="0.01 0.025 0.2" euler="0 0 -.785" rgba=".21 .3 .2 1" group='4' contype="1" conaffinity="0" mass="0.050" />
+    <geom type="box" pos="0.0354 -.0354 0.00" size="0.01 0.025 0.2" euler="0 0 -.785" rgba=".21 .3 .2 1" group='4' contype="1" conaffinity="0" mass="0.050"  />
+
+    <!-- <geom type="box" pos="0.07 0 0.185" size="0.01 0.032 0.025" euler="0 0 0" rgba=".4 .2 .4 1" group='4' contype="1" conaffinity="0" mass="0.00625" />
+    <geom type="box" pos="-.07 0 0.185" size="0.01 0.032 0.025" euler="0 0 0" rgba=".4 .2 .4 1" group='4' contype="1" conaffinity="0" mass="0.00625" />
+    <geom type="box" pos="0 0.07 0.185" size="0.01 0.032 0.025" euler="0 0 1.57" rgba=".4 .2 .4 1" group='4' contype="1" conaffinity="0" mass="0.00625" />
+    <geom type="box" pos="0 -.07 0.185" size="0.01 0.032 0.025" euler="0 0 1.57" rgba=".4 .2 .4 1" group='4' contype="1" conaffinity="0" mass="0.00625" />
+    <geom type="box" pos="0.0495 0.0495 0.185" size="0.01 0.032 0.025" euler="0 0 0.785" rgba=".4 .2 .4 1" group='4' contype="1" conaffinity="0" mass="0.00625" />
+    <geom type="box" pos="-.0495 -.0495 0.185" size="0.01 0.032 0.025" euler="0 0 0.785" rgba=".4 .2 .4 1" group='4' contype="1" conaffinity="0" mass="0.00625" />
+    <geom type="box" pos="-.0495 .0495 0.185" size="0.01 0.032 0.025" euler="0 0 -.785" rgba=".4 .2 .4 1" group='4' contype="1" conaffinity="0" mass="0.00625" />
+    <geom type="box" pos="0.0495 -.0495 0.185" size="0.01 0.032 0.025" euler="0 0 -.785" rgba=".4 .2 .4 1" group='4' contype="1" conaffinity="0" mass="0.00625" />
+
+    <geom type="box" pos="0.07 0 -0.185" size="0.01 0.032 0.025" euler="0 0 0" rgba='0.14 0.36 0.86 1' group='4' contype="1" conaffinity="0" mass="0.00625" />
+    <geom type="box" pos="-.07 0 -0.185" size="0.01 0.032 0.025" euler="0 0 0" rgba='0.14 0.36 0.86 1' group='4' contype="1" conaffinity="0" mass="0.00625" />
+    <geom type="box" pos="0 0.07 -0.185" size="0.01 0.032 0.025" euler="0 0 1.57" rgba='0.14 0.36 0.86 1' group='4' contype="1" conaffinity="0" mass="0.00625" />
+    <geom type="box" pos="0 -.07 -0.185" size="0.01 0.032 0.025" euler="0 0 1.57" rgba='0.14 0.36 0.86 1' group='4' contype="1" conaffinity="0" mass="0.00625" />
+    <geom type="box" pos="0.0495 0.0495 -0.185" size="0.01 0.032 0.025" euler="0 0 0.785" rgba='0.14 0.36 0.86 1' group='4' contype="1" conaffinity="0" mass="0.00625" />
+    <geom type="box" pos="-.0495 -.0495 -0.185" size="0.01 0.032 0.025" euler="0 0 0.785" rgba='0.14 0.36 0.86 1' group='4' contype="1" conaffinity="0" mass="0.00625" />
+    <geom type="box" pos="-.0495 .0495 -0.185" size="0.01 0.032 0.025" euler="0 0 -.785" rgba="0.14 0.36 0.86 1" group='4' contype="1" conaffinity="0" mass="0.00625" />
+    <geom type="box" pos="0.0495 -.0495 -0.185" size="0.01 0.032 0.025" euler="0 0 -.785" rgba="0.14 0.36 0.86 1" group='4' contype="1" conaffinity="0" mass="0.00625" /> -->
+
+    <!-- <geom type="box" pos="0.05 0 0.00" size="0.01 0.025 0.2" euler="0 0 0" contype="1" conaffinity="0" group='4' mass="0.050"/>
+    <geom type="box" pos="-.05 0 0.00" size="0.01 0.025 0.2" euler="0 0 0" contype="1" conaffinity="0" group='4' mass="0.050"/>
+    <geom type="box" pos="0 0.05 0.00" size="0.01 0.025 0.2" euler="0 0 1.57" contype="1" conaffinity="0" group='4' mass="0.050"/>
+    <geom type="box" pos="0 -.05 0.00" size="0.01 0.025 0.2" euler="0 0 1.57" contype="1" conaffinity="0" group='4' mass="0.050"/>
+    <geom type="box" pos="0.0354 0.0354 0.00" size="0.01 0.025 0.2" euler="0 0 0.785" contype="1" conaffinity="0" group='4' mass="0.050"/>
+    <geom type="box" pos="-.0354 -.0354 0.00" size="0.01 0.025 0.2" euler="0 0 0.785" contype="1" conaffinity="0" group='4' mass="0.050"/>
+    <geom type="box" pos="-.0354 .0354 0.00" size="0.01 0.025 0.2" euler="0 0 -.785" contype="1" conaffinity="0" group='4' mass="0.050"/>
+    <geom type="box" pos="0.0354 -.0354 0.00" size="0.01 0.025 0.2" euler="0 0 -.785" contype="1" conaffinity="0" group='4' mass="0.050"/> -->
+
+    <!-- sites -->
+    <site name="rod_center" type="sphere" size="0.0405" pos="0 0 0.05" rgba=".4 .4 .4 0.25" />
+    <site name="rod_left" type="sphere" size="0.041" pos="0 0 0.165" rgba="0 0 0 0"/>
+    <site name="rod_right" type="sphere" size="0.041" pos="0 0 -0.165" rgba="1 1 1 0"/>
+    <site name="rod_normal" type="sphere" size="0.041" pos="1.0 0 0" rgba="1 1 1 0"/>
+    <site name="rod_parallel" type="sphere" size="0.041" pos="0 0 1.0" rgba="1 1 1 0"/>
+  </body>
+</mujocoinclude>

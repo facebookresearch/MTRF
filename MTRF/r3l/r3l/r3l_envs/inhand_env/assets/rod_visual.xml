@@ -1,0 +1,11 @@
+<mujocoinclude name='rod_visual' >
+    <!-- TARGET -->
+    <body name="rod_visual" pos="0 0 0" euler="1.57 0 0">
+        <geom type="capsule" size=".04 .165" rgba="0 1 0 .05" group="1" contype="0" conaffinity="0"/>
+        <site name="target_center" type="sphere" size="0.04" pos="0 0 0" rgba="0 1 0 .05"/>
+        <site name="target_left" type="sphere" size="0.04" pos="0 0 0.165" rgba="0 0 0 .05"/>
+        <site name="target_right" type="sphere" size="0.04" pos="0 0 -0.165" rgba="1 1 1 .05"/>
+        <site name="target_normal" type="sphere" size="0.04" pos="1 0 0" rgba="1 1 1 0"/>
+        <site name="target_parallel" type="sphere" size="0.04" pos="0 0 1" rgba="1 1 1 0"/>
+    </body>
+</mujocoinclude>

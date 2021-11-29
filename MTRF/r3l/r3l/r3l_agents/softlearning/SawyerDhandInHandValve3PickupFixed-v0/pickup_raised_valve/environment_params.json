@@ -1,0 +1,127 @@
+{
+    "environment_git_sha": "6b93da8a2c36b667c225a1e4c3a6d85e9483161b switch_to_robel_style",
+    "environment_params": {
+        "training": {
+            "domain": "SawyerDhandInHandValve3",
+            "task": "PickupFixed-v0",
+            "universe": "gym",
+            "kwargs": {
+                "init_euler_range_params": {
+                    "type": "DiscreteRange",
+                    "values": [
+                        [
+                            0.0,
+                            0.0,
+                            3.141592653589793
+                        ]
+                    ]
+                },
+                "reset_every_n_episodes": Infinity,
+                "readjust_to_object_in_reset": true,
+                "readjust_hand_xyz": true,
+                "readjust_hand_euler": false,
+                "reset_policy_directory": [
+                    "/home/justinvyu/r3l/r3l/r3l_agents/softlearning/SawyerDhandInHandValve3RepositionRandomInit-v0/move_to_center_raised_valve",
+                    "/home/justinvyu/r3l/r3l/r3l_agents/softlearning/SawyerDhandInHandValve3ReorientCenterToRandom-v0/reorient_to_nearest_120_raised_valve"
+                ],
+                "reward_keys_and_weights": {
+                    "object_to_target_z_distance_reward": 1.0,
+                    "object_to_hand_xyz_distance_reward": 1.0,
+                    "span_dist": 1.0,
+                    "small_bonus": 1.0,
+                    "big_bonus": 1.0
+                }
+            }
+        },
+        "evaluation": {
+            "domain": "SawyerDhandInHandValve3",
+            "task": "PickupFixedEval-v0",
+            "universe": "gym",
+            "kwargs": {
+                "init_euler_range_params": {
+                    "type": "DiscreteRange",
+                    "values": [
+                        [
+                            0.0,
+                            0.0,
+                            3.141592653589793
+                        ]
+                    ]
+                },
+                "reset_every_n_episodes": 1,
+                "readjust_to_object_in_reset": true,
+                "readjust_hand_xyz": true,
+                "readjust_hand_euler": false,
+                "reward_keys_and_weights": {
+                    "object_to_target_z_distance_reward": 1.0,
+                    "object_to_hand_xyz_distance_reward": 1.0,
+                    "span_dist": 1.0,
+                    "small_bonus": 1.0,
+                    "big_bonus": 1.0
+                }
+            }
+        }
+    },
+    "mocap_range": [
+        0.15,
+        0.15,
+        0.175,
+        0.0,
+        0.0,
+        0.5235987755982988
+    ],
+    "mocap_pos_mean": [
+        0.705,
+        0.185,
+        1.0
+    ],
+    "mocap_quat_mean": [
+        0,
+        1,
+        0,
+        0
+    ],
+    "mocap_velocity_lim": [
+        0.01,
+        0.01,
+        0.01,
+        0.0,
+        0.0,
+        0.02
+    ],
+    "observation_keys": [
+        "dhand_qpos",
+        "sawyer_arm_qpos",
+        "dhand_qvel",
+        "sawyer_arm_qvel",
+        "mocap_pos",
+        "mocap_quat",
+        "object_xyz",
+        "object_z_orientation_cos",
+        "object_z_orientation_sin",
+        "object_qvel"
+    ],
+    "obj_offset": [
+        -0.15,
+        0.0,
+        0.175
+    ],
+    "hand_velocity_lim": [
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8
+    ]
+}

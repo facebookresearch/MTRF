@@ -1,0 +1,47 @@
+<mujoco model='sawyer-DHand-v2.0'>
+<!-- ======================================================
+    Model       :: Sawyer-DHand (MuJoCoV2.0)
+    Author      :: Vikash Kumar
+        Contacts    : vikashplus@gmail.com
+        Last edits  : 3Apr'20,
+    Copyright 2018 Vikash Kumar
+        Licensed under Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+====================================================== -->
+    <compiler meshdir="../../../sawyer_sim/" texturedir="../../../dsuite-scenes/scenes/"/>
+
+    <include file="../../../sawyer_sim/assets/basic_scene.xml"/>
+
+    <!-- Sawyer -->
+    <include file="../../../sawyer_sim/assets/sawyer_dependencies.xml"/>
+    <include file="../../../sawyer_sim/assets/sawyer_mocap_ee_act.xml"/>
+
+    <!-- D'Hand -->
+    <include file="../../../robel-scenes_dev/dhand/assets/dhand_dependencies.xml"/>
+
+    <size njmax='1000' nconmax='1000'/>
+
+    <worldbody>
+        <site name="target" type="sphere" size="0.02" pos=".001 .001 001"/>
+        <site name="target_left" type="sphere" size="0.02" pos="1.12 -.015 1.05" rgba="0 0 0 1"/>
+        <site name="target_right" type="sphere" size="0.02" pos="1.12 0.315 1.05" rgba="1 1 1 1"/>
+        <include file="../../base_env/assets/sawyer_dHand_chain.xml"/> <!--dHand is imported in here-->
+
+        <body name="table" pos="1.1 0.15 0.72">
+          <geom type="box" size="0.5 0.5 0.35" pos="0 0 -.35"/>
+          <geom type="box" size="0.4 0.02 0.1" pos="0 0.4 0.05" euler="-0.3 0 0" rgba=".3 .3 .3 1"/>
+          <geom type="box" size="0.02 0.4 0.1" pos="0.4 0 0.05"  euler="0 0.3 0" rgba=".3 .3 .3 1"/>
+          <geom type="box" size="0.02 0.4 0.1" pos="-0.4 0 0.05"  euler="0 -0.3 0" rgba=".3 .3 .3 1"/>
+          <geom type="box" size="0.4 0.02 0.1" pos="0 -0.4 0.05"  euler="0.3 0 0" rgba=".3 .3 .3 1"/>
+        </body>
+
+        <body name="B10" pos="1.12 0.15 0.8" euler="1.57 0 0">
+          <freejoint name="r1"/>
+          <geom type="capsule" size=".04 .165" rgba=" 1 1 0 1" mass=".5" group="4" />
+          <geom type="capsule" size=".04 .165" rgba=" 1 1 0 1" group="1" />
+            <site name="rod_left" type="sphere" size="0.04" pos="0 0 0.165" rgba="0 0 0 1"/>
+            <site name="rod_right" type="sphere" size="0.04" pos="0 0 -0.165" rgba="1 1 1 1"/>
+        </body>
+    </worldbody>
+
+
+</mujoco>

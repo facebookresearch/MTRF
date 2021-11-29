@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!-- Copyright 2019 The DSuite Authors.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. -->
+
+<mujocoinclude name='dodecahedron' >
+  <!-- <body name='dodecahedron' pos='0 0 0.041' euler='1.017 0 0'> -->
+  <body name='dodecahedron'>
+      <!-- Inertial bodies (group 4) -->
+      <geom type="sphere" size=".04" rgba="1 1 0 1" mass=".5" group="4" />
+
+      <site name="dodecahedron_center" type="sphere" size="0.038" pos="0 0 0" rgba=".4 .4 .4 1"/>
+
+      <!-- Red Object -->
+      <geom type="mesh" mesh="dodecahedron" rgba="0 0 0 0" density='100' group='1' contype='1' conaffinity='1'/>
+
+      <!-- <geom type="mesh" mesh="dodecahedron_top_left_face_blue" rgba="0 0 1 1" density='100' contype='1' group='1' conaffinity='1'/>
+      <geom type="mesh" mesh="dodecahedron_top_right_face_yellow" rgba="1 1 0 1" density='100' contype='1' group='1' conaffinity='1'/>
+      <geom type="mesh" mesh="dodecahedron_top_front_face_red" rgba="1 0 0 1" density='100' contype='1' group='1' conaffinity='1'/>
+      <geom type="mesh" mesh="dodecahedron_top_back_face_green" rgba="0 1 0 1" density='100' contype='1' group='1' conaffinity='1'/>
+      <geom type="mesh" mesh="dodecahedron_middle_quad_1_magenta" rgba="1 0 0.5 1" density='100' contype='1' group='1' conaffinity='1'/>
+      <geom type="mesh" mesh="dodecahedron_middle_quad_2_orange" rgba="1 0.5 0 1" density='100' contype='1' group='1' conaffinity='1'/>
+      <geom type="mesh" mesh="dodecahedron_middle_quad_3_purple" rgba="1 0 1 1" density='100' contype='1' group='1' conaffinity='1'/>
+      <geom type="mesh" mesh="dodecahedron_middle_quad_4_white" rgba="0.9 0.9 0.9 1" density='100' contype='1' group='1' conaffinity='1'/>
+      <geom type="mesh" mesh="dodecahedron_bottom_front_bgreen" rgba="0 1 0.5 1" density='100' contype='1' group='1' conaffinity='1'/>
+      <geom type="mesh" mesh="dodecahedron_bottom_back_black" rgba="0.2 0.2 0.2 1" density='100' contype='1' group='1' conaffinity='1'/>
+      <geom type="mesh" mesh="dodecahedron_bottom_right_babyblue" rgba="0 0.5 1 1" density='100' contype='1' group='1' conaffinity='1'/>
+      <geom type="mesh" mesh="dodecahedron_bottom_left_violet" rgba="0.5 0 1 1" density='100' contype='1' group='1' conaffinity='1'/> -->
+
+      <!-- <joint name="OBJFree" type="free"/> -->
+      <!-- <joint name="OBJSx" pos="0 0 0" type="slide" axis="1 0 0" limited='false'/> -->
+      <!-- <joint name="OBJSy" pos="0 0 0" type="slide" axis="0 1 0" limited='false'/> -->
+      <!-- <joint name="OBJSz" pos="0 0 0" type="slide" axis="0 0 1" limited='false'/> -->
+      <!-- <joint name="OBJRx" pos="0 0 0" type="hinge" axis="1 0 0" limited='false'/> -->
+      <!-- <joint name="OBJRy" pos="0 0 0" type="hinge" axis="0 1 0" limited='false'/> -->
+      <!-- <joint name="OBJRz" pos="0 0 0" type="hinge" axis="0 0 1" limited='false'/> -->
+    </body>
+</mujocoinclude>

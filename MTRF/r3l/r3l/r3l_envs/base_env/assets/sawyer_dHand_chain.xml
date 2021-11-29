@@ -1,0 +1,305 @@
+<mujocoinclude>
+<!-- ======================================================
+    Model 		:: Sawyer (MuJoCoV2.0)
+    Author      :: Vikash Kumar
+        Contacts 	: vikashplus@gmail.com
+        Last edits 	: 3Apr'20, 25Aug'18
+    Copyright 2018 Vikash Kumar
+        Licensed under Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+====================================================== -->
+    <camera pos="0 0 3.2" name="topview" />
+
+    <body name="base" pos="0 0 .95" childclass='sawyer'>
+        <site name="basesite" pos="0 0 0" size="0.01" />
+        <inertial pos="0 0 0" mass="0" diaginertia="0 0 0" />
+        <body name="controller_box" pos="0 0 0">
+            <inertial pos="-0.325 0 -0.38" mass="46.64" diaginertia="1.71363 1.27988 0.809981" />
+            <geom size="0.11 0.2 0.265" pos="-0.325 0 -0.38" type="box" />
+        </body>
+        <body name="pedestal_feet" pos="0 0 0">
+            <inertial pos="-0.1225 0 -0.758" mass="167.09" diaginertia="8.16095 9.59375 15.0785" />
+            <geom size="0.385 0.35 0.155" pos="-0.1225 0 -0.758" type="box"  contype="0" conaffinity="0" />
+        </body>
+        <body name="torso" pos="0 0 0">
+            <inertial pos="0 0 0" mass="0.0001" diaginertia="1e-08 1e-08 1e-08" />
+            <geom size="0.05 0.05 0.05" type="box" contype="0" conaffinity="0" group="1"  />
+        </body>
+        <body name="pedestal" pos="0 0 0">
+            <inertial pos="0 0 0" quat="0.659267 -0.259505 -0.260945 0.655692" mass="60.864" diaginertia="6.0869 5.81635 4.20915" />
+            <geom pos="0.26 0.345 -0.91488" quat="0.5 0.5 -0.5 -0.5" type="mesh" contype="0" conaffinity="0" group="1"  mesh="pedestal" />
+            <geom size="0.18 0.31" pos="-0.02 0 -0.29" type="cylinder" rgba="0.2 0.2 0.2 0" />
+        </body>
+        <body name="right_arm_base_link" pos="0 0 0">
+            <inertial pos="-0.0006241 -2.8025e-05 0.065404" quat="-0.209285 0.674441 0.227335 0.670558" mass="2.0687" diaginertia="0.00740351 0.00681776 0.00672942" />
+            <geom name='right_arm_base_link0' class="sawyer_viz" mesh="base" />
+            <geom name='right_arm_base_link1' size="0.08 0.12" pos="0 0 0.12" type="cylinder" class="sawyer_col" />
+            <body name="right_l0" pos="0 0 0.08">
+                <inertial pos="0.024366 0.010969 0.14363" quat="0.894823 0.00899958 -0.170275 0.412573" mass="5.3213" diaginertia="0.0651588 0.0510944 0.0186218" />
+                <joint name="right_j0" pos="0 0 0" axis="0 0 1" range="-3.0503 3.0503" damping="50"/>
+                <geom name='right_l0_g0' class="sawyer_viz" mesh="l0" />
+                <geom name='right_l0_g1' size="0.07" pos="0.08 0 0.23" class="sawyer_col" />
+                <body name="head" pos="0 0 0.2965">
+                    <inertial pos="0.0053207 -2.6549e-05 0.1021" quat="0.999993 7.08405e-05 -0.00359857 -0.000626247" mass="1.5795" diaginertia="0.0118334 0.00827089 0.00496574" />
+                    <!-- <joint name="head_pan" pos="0 0 0" axis="0 0 1" range="-5.0952 0.9064"/> -->
+                    <geom name='head_g0' class="sawyer_viz" mesh="head" />
+                    <geom name='head_g1' size="0.18" pos="0 0 0.08" class="sawyer_col" />
+                    <body name="screen" pos="0.03 0 0.105" quat="0.5 0.5 0.5 0.5">
+                        <geom size="0.12 0.07 0.001" type="box" group="1"/>
+                    </body>
+                    <site name="head_camera" size="0.01" pos="0.0228027 0 0.216572" quat="0.342813 -0.618449 0.618449 -0.342813"/>
+                </body>
+                <site name="right_torso_itb" pos="-0.055 0 0.22" quat="0.707107 0 -0.707107 0"/>
+                <body name="right_l1" pos="0.081 0.05 0.237" quat="0.5 -0.5 0.5 0.5">
+                    <inertial pos="-0.0030849 -0.026811 0.092521" quat="0.424888 0.891987 0.132364 -0.0794296" mass="4.505" diaginertia="0.0224339 0.0221624 0.0097097" />
+                    <!--<joint name="right_j1" pos="0 0 0" axis="0 0 1" range="-3.8095 2.2736"/>-->
+                    <joint name="right_j1" pos="0 0 0" axis="0 0 1" range="-3.8 1.25" damping="50"/>
+                    <!--<joint name="right_j1" pos="0 0 0" axis="0 0 1" range="0.8095 2.2736"/>-->
+                    <geom class="sawyer_viz" mesh="l1" />
+                    <geom size="0.07" pos="0 0 0.1225" class="sawyer_col" />
+                    <body name="right_l2" pos="0 -0.14 0.1425" quat="0.707107 0.707107 0 0">
+                        <inertial pos="-0.00016044 -0.014967 0.13582" quat="0.707831 -0.0524761 0.0516007 0.702537" mass="1.745" diaginertia="0.0257928 0.025506 0.00292515" />
+                        <joint name="right_j2" pos="0 0 0" axis="0 0 1" range="-3.0426 3.0426" damping="25"/>
+                        <geom class="sawyer_viz" mesh="l2" />
+                        <geom size="0.06 0.17" pos="0 0 0.08" type="capsule" class="sawyer_col" />
+                        <body name="right_l3" pos="0 -0.042 0.26" quat="0.707107 -0.707107 0 0">
+                            <site name="armsite" pos="0 0 0" size="0.01" />
+                            <inertial pos="-0.0048135 -0.0281 -0.084154" quat="0.902999 0.385391 -0.0880901 0.168247" mass="2.5097" diaginertia="0.0102404 0.0096997 0.00369622" />
+                            <joint name="right_j3" pos="0 0 0" axis="0 0 1" range="-3.0439 3.0439" damping="25"/>
+                            <geom class="sawyer_viz" mesh="l3" />
+                            <geom type="capsule" size="0.055 0.06" pos="0 0 -0.06" class="sawyer_col" />
+                            <body name="right_l4" pos="0 -0.125 -0.1265" quat="0.707107 0.707107 0 0">
+                                <!-- <inertial pos="-0.0018844 0.0069001 0.1341" quat="0.803612 0.031257 -0.0298334 0.593582" mass="1.1136" diaginertia="0.0136549 0.0135493 0.00127353" /> -->
+                                <joint name="right_j4" pos="0 0 0" axis="0 0 1" range="-2.9761 2.9761" />
+                                <geom class="sawyer_viz" mesh="l4" />
+                                <geom size="0.045 0.15" pos="0 0 0.11" type="capsule" class="sawyer_col" />
+                                <site name="right_arm_itb" pos="-0.055 0 0.075" quat="0.707107 0 -0.707107 0"/>
+                                <body name="right_l5" pos="0 0.031 0.275" quat="0.707107 -0.707107 0 0">
+                                    <!-- <inertial pos="0.0061133 -0.023697 0.076416" quat="0.404076 0.9135 0.0473125 0.00158335" mass="1.5625" diaginertia="0.00474131 0.00422857 0.00190672" /> -->
+                                    <joint name="right_j5" pos="0 0 0" axis="0 0 1" range="-2.9761 2.9761"/>
+                                    <geom class="sawyer_viz" mesh="l5" />
+                                    <geom type="capsule" size="0.045 0.05" pos="0 0 0.05" class="sawyer_col" />
+                                    <site name="right_hand_camera" pos="0.039552 -0.033 0.0695" quat="0.707107 0 0.707107 0"/>
+                                    <site name="right_wrist" pos="0 0 0.10541" quat="0.707107 0.707107 0 0"/>
+                                    <body name="right_l6" pos="0 -0.11 0.1053" quat="0.0616248 0.06163 -0.704416 0.704416">
+                                        <!-- <inertial pos="-8.0726e-06 0.0085838 -0.0049566" quat="0.479044 0.515636 -0.513069 0.491322" mass="0.3292" diaginertia="0.000360258 0.000311068 0.000214974" /> -->
+                                        <joint name="right_j6" pos="0 0 0" axis="0 0 1" range="-4.7124 4.7124"/>
+                                        <geom class="sawyer_viz" mesh="l6"/>
+                                        <geom size="0.055 0.025" pos="0 0.015 -0.01" type="cylinder" class="sawyer_col" />
+                                        <body name="right_ee_attchment" pos="0 0 0.0245" quat="0.707107 0 0 0.707107" childclass="sawyer_gripper">
+                                            <site name="endeffector0" pos="0 0 0" size="0.01" />
+
+<!--  ================= BEGIN GRIPPER ================= /-->
+<!-- <include file="../../../robel-scenes_dev/dhand/assets/dhand_chain.xml"/> -->
+<!--
+ ~ Copyright 2019 The ROBEL Authors.
+ ~
+ ~ Licensed under the Apache License, Version 2.0 (the "License");
+ ~ you may not use this file except in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~     http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing, software
+ ~ distributed under the License is distributed on an "AS IS" BASIS,
+ ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ ~ See the License for the specific language governing permissions and
+ ~ limitations under the License.
+ -->
+
+        <body name="palm" pos="0 0 0.01" childclass="dHand">
+          <geom euler="1.57 0 1.57" mesh="motor" pos="0.012 0 0.112"/>
+          <geom euler="1.57 0 1.66" mesh="motor" pos="-0.042 0 0.111"/>
+          <geom euler="1.57 0 1.484" mesh="motor" pos="0.066 0 0.111"/>
+          <geom material="visual_white" euler="1.57 0 1.57" mesh="PalmInterior" pos="0.011 0 0.053"/>
+          <geom euler="1.57 0 1.57" mesh="Palmplate" pos="0.013 0.025 0.061" material="visual_chrome"/>
+          <geom euler="1.57 0 1.57" mesh="Palmplate" pos="0.013 -0.025 0.061"/>
+          <geom class="phys_metal" pos="-0.011 0 0.048" size="0.047 0.027 0.037" type="box" mass=".300"/>
+          <geom class="phys_metal" pos="-0.044 0 -.002" size="0.014 0.027 0.013" type="box" mass=".150"/>
+          <geom class="phys_metal" pos="0.012 0 0.109" size="0.015 0.017 0.024" type="box" mass=".086"/>
+          <geom class="phys_metal" euler="0 0.087 0" pos="0.066 0 0.108" size="0.015 0.018 0.024" type="box" mass=".086"/>
+          <geom class="phys_metal" euler="0 -0.087 0" pos="-0.042 0 0.108" size="0.015 0.018 0.024" type="box" mass=".086"/>
+          <geom class="phys_metal" pos="0.06 0 0.068" size="0.026 0.027 0.016" type="box" mass=".150"/>
+          <geom class="phys_metal" pos="0 -0.0248 -.002" size="0.03 0.002 0.013" type="box" mass=".30"/>
+          <geom class="phys_metal" pos="0 0.0248 -.002" size="0.03 0.002 0.013" type="box" mass=".30"/>
+          <geom class="phys_metal" pos="0.014 -0.025 0.109" size="0.072 0.002 0.026" type="box" mass=".50"/>
+          <geom class="phys_metal" pos="0.014 0.025 0.109" size="0.072 0.002 0.026" type="box" mass=".50"/>
+          <geom class="phys_metal" pos="0.047 0 -.001" size="0.017 0.027 0.0145" type="box" mass=".79"/>
+          <site name="grasp" pos="0 -.125 .1" type="sphere" size="0.020"/>
+          <site name="grasp_right" pos="0.165 -.125 .1" type="sphere" size="0.020"  rgba=".5 .65 .5 1"/>
+          <site name="grasp_left" pos="-.165 -.125 .1" type="sphere" size="0.020" rgba=".8 .95 .8 1"/>
+
+          <!-- INDEX/FIRST FINGER -->
+          <body euler="0 0.087 0" name="FF_metacarpel" pos="0.067 0 0.12">
+            <joint axis="0 1 0" name="FF_ADB" class="ADB"/>
+            <geom euler="-1.57 3.14 -1.57" mesh="knuckle"/>
+            <geom euler="1.57 -1.57 0" mesh="motor" pos="0 0 0.037"/>
+            <geom class="phys_metal" pos="0 0 0.021" size="0.015 0.021 0.002" type="box" mass=".003"/>
+            <geom class="phys_metal" pos="0 0.02 0.01" size="0.015 0.001 0.014" type="box" mass=".001"/>
+            <geom class="phys_metal" pos="0 -0.02 0.01" size="0.015 0.001 0.014" type="box" mass=".001"/>
+            <geom class="phys_metal" pos="0 0.003 0.037" size="0.018 0.024 0.015" type="box" mass=".086"/>
+            <body name="FF_proximal" pos="0 -0.009 0.037">
+              <joint axis="1 0 0" name="FF_MCP" class="MCP"/>
+              <geom euler="0 -1.57 0" mesh="bracket2" pos="-0.018 0 0.012"/>
+              <geom euler="0 1.57 3.14" mesh="bracket2" pos="0.018 0 0.012"/>
+              <geom euler="0 -1.57 0" mesh="motor" pos="0 0 0.0445"/>
+              <geom class="phys_metal" pos="0.02 0 0.012" size="0.0015 0.015 0.014" type="box" mass=".003"/>
+              <geom class="phys_metal" pos="-0.02 0 0.012" size="0.0015 0.015 0.014" type="box" mass=".003"/>
+              <geom class="phys_metal" pos="0 0 0.041" size="0.018 0.015 0.024" type="box" mass=".086"/>
+              <body name="FF_middle" pos="0 0 0.054">
+                <joint axis="1 0 0" name="FF_PIP" class="PIP"/>
+                <geom euler="0 1.57 3.14" mesh="bracket2" pos="0.018 0 0.011"/>
+                <geom euler="0 -1.57 0" mesh="bracket2" pos="-0.018 0 0.011"/>
+                <geom euler="0 -1.57 0" mesh="motor" pos="0 0 0.0436"/>
+                <geom class="phys_metal" pos="0.02 0 0.011" size="0.0015 0.015 0.014" type="box" mass=".003"/>
+                <geom class="phys_metal" pos="-0.02 0 0.011" size="0.0015 0.015 0.014" type="box" mass=".003"/>
+                <geom class="phys_metal" pos="0 0 0.041" size="0.018 0.015 0.024" type="box" mass=".086"/>
+                <body name="FF_distal" pos="0 0 0.052">
+                  <joint axis="1 0 0" name="FF_DIP" class="DIP"/>
+                  <geom euler="0 -1.57 0" mesh="bracket2" pos="-0.018 0 0.012"/>
+                  <geom euler="0 1.57 3.14" mesh="bracket2" pos="0.018 0 0.012"/>
+                  <geom material="visual_blue" euler="1.57 0 1.57" mesh="finger" pos="0 0 0.04"/>
+                  <geom class="phys_metal" pos="-0.02 0 0.012" size="0.0015 0.015 0.014" type="box" mass=".003"/>
+                  <geom class="phys_metal" pos="0.02 0 0.012" size="0.0015 0.015 0.014" type="box" mass=".003"/>
+                  <geom class="phys_metal" pos="0 0 0.045" size="0.019" type="sphere" mass=".01"/>
+                  <geom class="phys_metal" pos="0 0 0.033" size="0.019 .01" type="cylinder" mass=".007"/>
+                  <geom class="phys_metal" pos="0 0 0.022" size="0.019 .018 .005" type="box" mass=".004"/>
+                  <site name="FFtip" type="sphere" pos="0 0 0.045" size="0.01" rgba="1 .3 .3 1"/>
+                </body>
+              </body>
+            </body>
+          </body>
+          <!-- MIDDLE FINGER -->
+          <body name="MF_metacarpel" pos="0.012 0 0.121">
+            <joint axis="0 1 0" name="MF_ADB" class="ADB"/>
+            <geom euler="-1.57 3.14 -1.57" mesh="knuckle"/>
+            <geom euler="1.57 -1.57 0" mesh="motor" pos="0 0 0.037"/>
+            <geom class="phys_metal" pos="0 0 0.021" size="0.015 0.021 0.002" type="box" mass=".003"/>
+            <geom class="phys_metal" pos="0 0.02 0.01" size="0.015 0.001 0.014" type="box" mass=".001"/>
+            <geom class="phys_metal" pos="0 -0.02 0.01" size="0.015 0.001 0.014" type="box" mass=".001"/>
+            <geom class="phys_metal" pos="0 0.003 0.037" size="0.018 0.024 0.015" type="box" mass=".086"/>
+            <body name="MF_proximal" pos="0 -0.009 0.037">
+              <joint axis="1 0 0" name="MF_MCP" class="MCP"/>
+              <geom euler="0 -1.57 0" mesh="bracket2" pos="-0.018 0 0.012"/>
+              <geom euler="0 1.57 3.14" mesh="bracket2" pos="0.018 0 0.012"/>
+              <geom euler="0 -1.57 0" mesh="motor" pos="0 0 0.0445"/>
+              <geom class="phys_metal" pos="0.02 0 0.012" size="0.0015 0.015 0.014" type="box" mass=".003"/>
+              <geom class="phys_metal" pos="-0.02 0 0.012" size="0.0015 0.015 0.014" type="box" mass=".003"/>
+              <geom class="phys_metal" pos="0 0 0.041" size="0.018 0.015 0.024" type="box" mass=".086"/>
+              <body name="MF_middle" pos="0 0 0.054">
+                <joint axis="1 0 0" name="MF_PIP" class="PIP"/>
+                <geom euler="0 1.57 3.14" mesh="bracket2" pos="0.018 0 0.011"/>
+                <geom euler="0 -1.57 0" mesh="bracket2" pos="-0.018 0 0.011"/>
+                <geom euler="0 -1.57 0" mesh="motor" pos="0 0 0.0436"/>
+                <geom class="phys_metal" pos="0.02 0 0.011" size="0.0015 0.015 0.014" type="box" mass=".003"/>
+                <geom class="phys_metal" pos="-0.02 0 0.011" size="0.0015 0.015 0.014" type="box" mass=".003"/>
+                <geom class="phys_metal" pos="0 0 0.041" size="0.018 0.015 0.024" type="box" mass=".086"/>
+                <body name="MF_distal" pos="0 0 0.052">
+                  <joint axis="1 0 0" name="MF_DIP" class="DIP"/>
+                  <geom euler="0 -1.57 0" mesh="bracket2" pos="-0.018 0 0.012"/>
+                  <geom euler="0 1.57 3.14" mesh="bracket2" pos="0.018 0 0.012"/>
+                  <geom material="visual_blue" euler="1.57 0 1.57" mesh="finger" pos="0 0 0.04"/>
+                  <geom class="phys_metal" pos="-0.02 0 0.012" size="0.0015 0.015 0.014" type="box" mass=".003"/>
+                  <geom class="phys_metal" pos="0.02 0 0.012" size="0.0015 0.015 0.014" type="box" mass=".003"/>
+                  <geom class="phys_metal" pos="0 0 0.045" size="0.019" type="sphere" mass=".01"/>
+                  <geom class="phys_metal" pos="0 0 0.033" size="0.019 .01" type="cylinder" mass=".007"/>
+                  <geom class="phys_metal" pos="0 0 0.022" size="0.019 .018 .005" type="box" mass=".004"/>
+                  <site name="MFtip" type="sphere" pos="0 0 0.045" size="0.01" rgba=".3 1 .3 1"/>
+                </body>
+              </body>
+            </body>
+          </body>
+          <!-- PINKY FINGER -->
+          <body euler="0 -0.087 0" name="PF_metacarpel" pos="-0.043 0 0.12">
+            <joint axis="0 1 0" name="PF_ADB" class="ADB"/>
+            <geom euler="-1.57 3.14 -1.57" mesh="knuckle"/>
+            <geom euler="1.57 -1.57 0" mesh="motor" pos="0 0 0.037"/>
+            <geom class="phys_metal" pos="0 0 0.021" size="0.015 0.021 0.002" type="box" mass=".003"/>
+            <geom class="phys_metal" pos="0 0.02 0.01" size="0.015 0.001 0.014" type="box" mass=".001"/>
+            <geom class="phys_metal" pos="0 -0.02 0.01" size="0.015 0.001 0.014" type="box" mass=".001"/>
+            <geom class="phys_metal" pos="0 0.003 0.037" size="0.018 0.024 0.015" type="box" mass=".086"/>
+            <body name="PF_proximal" pos="0 -0.009 0.037">
+              <joint axis="1 0 0" name="PF_MCP" class="MCP"/>
+              <geom euler="0 -1.57 0" mesh="bracket2" pos="-0.018 0 0.012"/>
+              <geom euler="0 1.57 3.14" mesh="bracket2" pos="0.018 0 0.012"/>
+              <geom euler="0 -1.57 0" mesh="motor" pos="0 0 0.0445"/>
+              <geom class="phys_metal" pos="0.02 0 0.012" size="0.0015 0.015 0.014" type="box" mass=".003"/>
+              <geom class="phys_metal" pos="-0.02 0 0.012" size="0.0015 0.015 0.014" type="box" mass=".003"/>
+              <geom class="phys_metal" pos="0 0 0.041" size="0.018 0.015 0.024" type="box" mass=".086"/>
+              <body name="PF_middle" pos="0 0 0.054">
+                <joint axis="1 0 0" name="PF_PIP" class="PIP"/>
+                <geom euler="0 1.57 3.14" mesh="bracket2" pos="0.018 0 0.011"/>
+                <geom euler="0 -1.57 0" mesh="bracket2" pos="-0.018 0 0.011"/>
+                <geom euler="0 -1.57 0" mesh="motor" pos="0 0 0.0436"/>
+                <geom class="phys_metal" pos="0.02 0 0.012" size="0.0015 0.015 0.014" type="box" mass=".003"/>
+                <geom class="phys_metal" pos="-0.02 0 0.012" size="0.0015 0.015 0.014" type="box" mass=".003"/>
+                <geom class="phys_metal" pos="0 0 0.041" size="0.018 0.015 0.024" type="box" mass=".086"/>
+                <body name="PF_distal" pos="0 0 0.052">
+                  <joint axis="1 0 0" name="PF_DIP" class="DIP"/>
+                  <geom euler="0 -1.57 0" mesh="bracket2" pos="-0.018 0 0.012"/>
+                  <geom euler="0 1.57 3.14" mesh="bracket2" pos="0.018 0 0.012"/>
+                  <geom material="visual_blue" euler="1.57 0 1.57" mesh="finger" pos="0 0 0.04"/>
+                  <geom class="phys_metal" pos="-0.02 0 0.011" size="0.0015 0.015 0.014" type="box" mass=".003"/>
+                  <geom class="phys_metal" pos="0.02 0 0.011" size="0.0015 0.015 0.014" type="box" mass=".003"/>
+                  <geom class="phys_metal" pos="0 0 0.045" size="0.019" type="sphere" mass=".01"/>
+                  <geom class="phys_metal" pos="0 0 0.033" size="0.019 .01" type="cylinder" mass=".007"/>
+                  <geom class="phys_metal" pos="0 0 0.022" size="0.019 .018 .005" type="box" mass=".004"/>
+                  <site name="PFtip" type="sphere" pos="0 0 0.045" size="0.01" rgba=".3 .3 1 1"/>
+                </body>
+              </body>
+            </body>
+          </body>
+          <!-- THUMB -->
+          <body euler="0 1.658 0" name="TF" pos="0.055 0 0.04">
+            <joint axis="1 0 0" name="TF_MCP" class="MCP"/>
+            <geom euler="0 0 3.14" mesh="motor" pos="0.009 0 0.052"/>
+            <geom euler="-3.14 -1.57 0" mesh="motor" pos="0.006 0 0.009"/>
+            <geom material="visual_chrome" euler="1.57 0 1.57" mesh="thumb_bracket" pos="0.015 0.016 0.031"/>
+            <geom material="visual_chrome" euler="1.57 0 1.57" mesh="thumb_bracket" pos="0.015 -0.016 0.031"/>
+            <geom class="phys_metal" pos="0.006 0 0.012" size="0.018 0.018 0.024" type="box" mass=".092"/>
+            <geom class="phys_metal" pos="0.012 0 0.052" size="0.024 0.018 0.017" type="box" mass=".092"/>
+            <body name="TF_metacarpel" pos="0 0 0.072">
+              <!-- <joint axis="0 0 1" name="TF_ADB" range="-2.57 .57"/> -->
+              <joint axis="0 0 1" name="TF_ADB" range="-1.57 0"/>
+              <geom euler="1.57 0 1.57" mesh="bracket1" pos="0 0 0.0015"/>
+              <geom euler="0 -1.57 0" mesh="motor" pos="0 0 0.031"/>
+              <geom class="phys_metal" pos="0 0 0.028" size="0.018 0.015 0.024" type="box"/>
+              <geom class="phys_metal" pos="0 0 0.005" size="0.019 0.014 0.006" type="box"/>
+              <body name="TF_middle" pos="0 0 0.0405">
+                <joint axis="1 0 0" name="TF_PIP" class="PIP"/>
+                <geom euler="0 -1.57 0" mesh="bracket2" pos="-0.018 0 0.011"/>
+                <geom euler="3.14 1.57 0" mesh="bracket2" pos="0.017 0 0.011"/>
+                <geom euler="0 -1.57 0" mesh="motor" pos="0 0 0.044"/>
+                <geom class="phys_metal" pos="-0.02 0 0.011" size="0.0015 0.015 0.014" type="box" mass=".003"/>
+                <geom class="phys_metal" pos="0.02 0 0.011" size="0.0015 0.015 0.014" type="box" mass=".003"/>
+                <geom class="phys_metal" pos="0 0 0.041" size="0.018 0.015 0.024" type="box" mass=".086"/>
+                <body name="TF_distal" pos="0 0 0.0535">
+                  <joint axis="1 0 0" name="TF_DIP" class="DIP"/>
+                  <geom euler="3.14 1.57 0" mesh="bracket2" pos="0.017 0 0.011"/>
+                  <geom euler="0 -1.57 0" mesh="bracket2" pos="-0.018 0 0.011"/>
+                  <geom material="visual_blue" euler="1.57 0 1.57" mesh="finger" pos="0 0 0.04"/>
+                  <geom class="phys_metal" pos="-0.02 0 0.011" size="0.0015 0.015 0.014" type="box" mass=".003"/>
+                  <geom class="phys_metal" pos="0.02 0 0.011" size="0.0015 0.015 0.014" type="box" mass=".003"/>
+                  <geom class="phys_metal" pos="0 0 0.045" size="0.019" type="sphere" mass=".01"/>
+                  <geom class="phys_metal" pos="0 0 0.033" size="0.019 .01" type="cylinder" mass=".007"/>
+                  <geom class="phys_metal" pos="0 0 0.022" size="0.019 .018 .005" type="box" mass=".004"/>
+                  <site name="TFtip" type="sphere" pos="0 0 0.045" size="0.01" rgba="1 1 .3 1"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+
+<!--  ================= END GRIPPER ================= /-->
+
+                                        </body>
+                                    </body>
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </body>
+
+</mujocoinclude>

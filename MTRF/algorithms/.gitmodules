@@ -1,0 +1,3 @@
+[submodule "meta-nml"]
+	path = meta-nml
+	url = https://github.com/kevintli/meta-nml.git

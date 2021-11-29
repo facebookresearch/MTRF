@@ -1,0 +1,35 @@
+{'FIM_invert_args': {'damping': 0.0001,
+                     'iters': 10,
+                     'mode': 'cg',
+                     'regu_type': 'direct'},
+ 'ctrl_timestep': 0.08,
+ 'env_name': 'SawyerDhandInHandPickupRandom-v3',
+ 'evaluation_rollouts': 25,
+ 'exp_notes': '<Vj0a: Random pickup env> <Vj0b: reducing bonus and adding '
+              'pregrasp reward shaping> <Vj0c:changing reaching below to '
+              'reaching on the object><VJ0d: Pre-Grasp+target_rewards> '
+              '<Vj0f:high bonuses+high pregrasp> <VJ0j: F worked well except '
+              'the target location. Adding some target bonuses> <Bj0k: tryin '
+              'diff std> <Bj1b: random+rotation+high std> <BJ1c: reduced '
+              'rotational vel + low std + noRotationRandom> <BJ1d: reduced '
+              'rotational vel -.25 std + targetRotationRandom> <Vj2a: obj '
+              'rotaions, no target rotations, left right grasp sites><Vj2b: '
+              'time spacing pregrasp and span> <VJ2c: '
+              'reach-timing-fix+targetrotation>',
+ 'gae_lambda': 0.97,
+ 'gamma': 0.995,
+ 'hidden_sizes': (32, 32),
+ 'horizon': 75,
+ 'init_std': -0.25,
+ 'job_name': 'SawyerDhandInHandPickupRandom-v3-VJ2c_0',
+ 'niter': 15001,
+ 'normalized_step_size': 0.05,
+ 'num_cpu': 14,
+ 'num_traj': 98,
+ 'output_dir': '/home/vikash/Projects/r3l/SawyerDhandInHandPickupRandom-v3-VJ2c_0',
+ 'robot': {},
+ 'sample_mode': 'trajectories',
+ 'save_freq': 500,
+ 'save_logs': True,
+ 'seed': 101,
+ 'sim_timestep': 0.002}

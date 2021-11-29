@@ -1,0 +1,99 @@
+{
+    "environment_git_sha": "d9b9db557a063e02c3c4d6fc45d51e5325f34561 master",
+    "environment_params": {
+        "training": {
+            "domain": "SawyerDhandInHandDodecahedron",
+            "task": "FlipUpFixed-v0",
+            "universe": "gym",
+            "kwargs": {
+                "reset_every_n_episodes": 1
+            }
+        },
+        "evaluation": {
+            "domain": "SawyerDhandInHandDodecahedron",
+            "task": "FlipUpFixedEval-v0",
+            "universe": "gym",
+            "kwargs": {
+                "reset_every_n_episodes": 1
+            }
+        }
+    },
+    "mocap_range": [
+        [
+            0.40499999999999997,
+            1.005
+        ],
+        [
+            -0.11499999999999999,
+            0.485
+        ],
+        [
+            0.825,
+            1.1
+        ],
+        [
+            -6.283185307179586,
+            0.0
+        ],
+        [
+            0.0,
+            0.0
+        ],
+        [
+            -0.5235987755982988,
+            0.5235987755982988
+        ]
+    ],
+    "mocap_pos_mean": [
+        0.705,
+        0.185,
+        0.9625
+    ],
+    "mocap_quat_mean": [
+        6.123233995736766e-17,
+        -1.0,
+        0.0,
+        0.0
+    ],
+    "mocap_velocity_lim": [
+        0.0,
+        0.0,
+        0.01,
+        0.1,
+        0.0,
+        0.05
+    ],
+    "observation_keys": [
+        "dhand_qpos",
+        "sawyer_arm_qpos",
+        "mocap_pos",
+        "mocap_euler",
+        "object_xyz",
+        "target_xyz",
+        "object_to_hand_xyz",
+        "object_to_target_xyz"
+    ],
+    "obj_offset": [
+        -0.15,
+        0.0,
+        0.175
+    ],
+    "hand_velocity_lim": [
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8
+    ]
+}
